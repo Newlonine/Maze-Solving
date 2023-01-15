@@ -21,11 +21,11 @@ For this project, we decided to use reinforcement learning to train a robot to f
 We tested program with two mazes : a 3x3 and a 8x8. It takes a lot of time for the robot to found the goal but fortunately we can speed up the simulation time.
 
 In the 8x8 maze, the goal is at position (2, 6).
-[Here](https://drive.google.com/file/d/1yFsZX92hPTwopLn47fQF8B3Z4vM2EjSW/view?usp=sharing), you can observe the beggining of the simulation.
-[Here](https://drive.google.com/file/d/16_QhFwZmLGX2QW8OcrxxOORnK6ro7d3o/view?usp=sharing), you can observe the simulation once the robot has found the best path.
+-[Here](https://drive.google.com/file/d/1yFsZX92hPTwopLn47fQF8B3Z4vM2EjSW/view?usp=sharing), you can observe the beggining of the simulation.
+-[Here](https://drive.google.com/file/d/16_QhFwZmLGX2QW8OcrxxOORnK6ro7d3o/view?usp=sharing), you can observe the simulation once the robot has found the best path.
 
 In the 3x3 maze, the goal is at position (0, 2).
-[Here](https://drive.google.com/file/d/1e6Re5GzfiHdBouwmHn9sDVmYKUPmo5Mk/view?usp=sharing), the video of the simulation.
+-[Here](https://drive.google.com/file/d/1e6Re5GzfiHdBouwmHn9sDVmYKUPmo5Mk/view?usp=sharing), the video of the simulation.
 
 ## Challenges
 
