@@ -33,7 +33,7 @@ Then we look the next state, i.e. the next position of the robot. With all these
     	self.Q[current_state, action] = (1 - ALPHA) * self.Q[current_state, action] + ALPHA * target
 
 ## Results 
-We tested program with two mazes : a 3x3 and a 8x8. It takes a lot of time for the robot to found the goal but fortunately we can speed up the simulation time.
+We tested program with two mazes : a 3x3 and a 8x8. It takes a lot of time for the robot to find the goal but fortunately we can speed up the simulation time.
 
 In the 8x8 maze, the goal is at position (2, 6).
 [Here](https://drive.google.com/file/d/1yFsZX92hPTwopLn47fQF8B3Z4vM2EjSW/view?usp=sharing), you can observe the beggining of the simulation.
