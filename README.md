@@ -16,16 +16,31 @@ For this project, we decided to use reinforcement learning to train a robot to f
 
 ## High-level description
 
+During the simulation and one time every X step, we check the game status. If the robot lost or won an episode, we start a new one. The simulation stops if the maximum number of episodes has been reached.
+
+Now into the loop, the robot choose an action to perform using the ***epsilon greedy policy***. Either the robot explores (it choose sa random action) or it exploits (it chooses the best action according to the long-terme reward).
+Once the robot has choose its action, we look the immediate reward and the status. We check if the chosen action is possible (do not get into a wall, do not get out of the bound) and we check the reward :
+
+ - Find the target : +1.0
+ - Go into a wall : -0.75
+ - Discover a new cell : +0.04
+ - Return on a discovered cell : -0.5
+
+Then we look the next state, i.e. the next position of the robot. With all these parameters, we update the Q_table using the Q_learning function which is :
+
+    def Q_learning(self, action, reward, current_state, next_state) :
+    	target = reward + GAMMA * np.max(self.Q[next_state, :])
+    	self.Q[current_state, action] = (1 - ALPHA) * self.Q[current_state, action] + ALPHA * target
 
 ## Results 
 We tested program with two mazes : a 3x3 and a 8x8. It takes a lot of time for the robot to found the goal but fortunately we can speed up the simulation time.
 
 In the 8x8 maze, the goal is at position (2, 6).
--[Here](https://drive.google.com/file/d/1yFsZX92hPTwopLn47fQF8B3Z4vM2EjSW/view?usp=sharing), you can observe the beggining of the simulation.
--[Here](https://drive.google.com/file/d/16_QhFwZmLGX2QW8OcrxxOORnK6ro7d3o/view?usp=sharing), you can observe the simulation once the robot has found the best path.
+[Here](https://drive.google.com/file/d/1yFsZX92hPTwopLn47fQF8B3Z4vM2EjSW/view?usp=sharing), you can observe the beggining of the simulation.
+[Here](https://drive.google.com/file/d/16_QhFwZmLGX2QW8OcrxxOORnK6ro7d3o/view?usp=sharing), you can observe the simulation once the robot has found the best path.
 
 In the 3x3 maze, the goal is at position (0, 2).
--[Here](https://drive.google.com/file/d/1e6Re5GzfiHdBouwmHn9sDVmYKUPmo5Mk/view?usp=sharing), the video of the simulation.
+[Here](https://drive.google.com/file/d/1e6Re5GzfiHdBouwmHn9sDVmYKUPmo5Mk/view?usp=sharing), the video of the simulation.
 
 ## Challenges
 
@@ -41,7 +56,7 @@ Last, we would add human interaction, where the user would make a decision inste
 
 ## Takeaways
 - A lab session dedicated to this project would be nice. This can help us to think about what to do and also help us to start it. The subject of this project was far too free although examples have been given.
-- About the group work : *insert something*
+- About the group work, each member worked on a part of the project and we helped each other. 
 ***
 ***
 ## Requirements
