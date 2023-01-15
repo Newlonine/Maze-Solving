@@ -1,0 +1,30 @@
+PROTO Wall [
+  field SFString  name  "wall"
+  field SFVec3f    translation  0 0 0.05
+]
+{
+  Robot {
+    translation IS translation
+    children [
+      DEF BODY Transform {
+        children [
+          Solid {
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0.8 0.8
+                  roughness 1
+                  metalness 1
+                }
+                geometry Box {
+                  size 0.125 0.125 0.1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+    name IS name
+  }
+}
